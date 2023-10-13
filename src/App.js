@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Menu from './components/Menu';
+import Home from './components/Home';
+import Tecnologias from './components/Tecnologias';
+import Footer from './components/Footer';
+import Musica from './components/Musica';
+import Experience from './components/Experience';
+import Stack from './components/Stack';
+import GitHubProjects from './components/GitHubProjects';
 
-function App() {
+
+const App = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`min-h-screen ${darkMode ? 'bg-zinc-900 text-white' : 'bg-gray-100 text-gray-800'}`}>
+      <Menu darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Home darkMode={darkMode} />
+      <Experience darkMode={darkMode} />
+      <Stack darkMode={darkMode} />
+      <Musica darkMode={darkMode} />
+      <Tecnologias darkMode={darkMode} />
+        {/*<GitHubProjects darkMode={darkMode} />*/}
+      <Footer darkMode={darkMode} />
     </div>
   );
-}
+};
 
 export default App;
