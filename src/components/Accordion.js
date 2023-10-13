@@ -13,12 +13,10 @@ const ExperienceAccordion = ({ experiences, darkMode }) => {
 
   const accordionBgClass = darkMode ? 'bg-zinc-900' : 'bg-gray-200';
   const textClass = darkMode ? 'text-gray-200' : 'text-gray-600';
-  const blueIconClass = 'text-blue-500'; // Classe para a cor azul do ícone
   const blueIconBgClass = 'bg-blue-500 rounded-full p-1'; // Classe para o background color arredondado
 
   return (
-    <div className="flex items-center justify-center">
-      <div className="container mx-auto px-6 py-4 space-y-4">
+    <div className="space-y-4">
         {experiences.map((experience, index) => (
           <div key={index} className={`p-4 rounded-md ${accordionBgClass}`}>
             <button
@@ -51,7 +49,6 @@ const ExperienceAccordion = ({ experiences, darkMode }) => {
             )}
           </div>
         ))}
-      </div>
     </div>
   );
 };

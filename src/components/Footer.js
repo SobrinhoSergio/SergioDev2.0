@@ -1,25 +1,49 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Importe os ícones das redes sociais
 
+const socialLinks = [
+  {
+    icon: FaFacebook,
+    color: 'blue-500',
+    link: 'link_do_facebook',
+  },
+  {
+    icon: FaTwitter,
+    color: 'blue-400',
+    link: 'link_do_twitter',
+  },
+  {
+    icon: FaInstagram,
+    color: 'pink-500',
+    link: 'link_do_instagram',
+  },
+  {
+    icon: FaLinkedin,
+    color: 'blue-800',
+    link: 'link_do_linkedin',
+  },
+];
+
 const Footer = ({ darkMode }) => {
   return (
-    <footer className={`bg-${darkMode ? 'gray-900' : 'gray-100'} py-6`}>
-      <div className="container mx-auto flex justify-center">
+    <footer className={`py-20 ${darkMode ? 'bg-zinc-900' : 'bg-gray-200'}`}>
+      <section className="container mx-auto flex justify-center">
         <div className="flex space-x-4">
-          <a href="link_do_facebook" target="_blank" rel="noopener noreferrer">
-            <FaFacebook className={`text-${darkMode ? 'white' : 'gray-600'} hover:text-blue-500`} size={24} />
-          </a>
-          <a href="link_do_twitter" target="_blank" rel="noopener noreferrer">
-            <FaTwitter className={`text-${darkMode ? 'white' : 'gray-600'} hover:text-blue-400`} size={24} />
-          </a>
-          <a href="link_do_instagram" target="_blank" rel="noopener noreferrer">
-            <FaInstagram className={`text-${darkMode ? 'white' : 'gray-600'} hover:text-pink-500`} size={24} />
-          </a>
-          <a href="link_do_linkedin" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin className={`text-${darkMode ? 'white' : 'gray-600'} hover:text-blue-800`} size={24} />
-          </a>
+          {socialLinks.map((social, index) => (
+            <a
+              key={index}
+              href={social.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {React.createElement(social.icon, {
+                className: `text-gray-600 hover:text-${social.color}`,
+                size: 30,
+              })}
+            </a>
+          ))}
         </div>
-      </div>
+      </section>
     </footer>
   );
 };
