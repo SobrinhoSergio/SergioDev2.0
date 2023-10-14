@@ -26,7 +26,7 @@ const socialLinks = [
 
 const Footer = ({ darkMode }) => {
   return (
-    <footer className={`py-20 ${darkMode ? 'bg-zinc-900' : 'bg-gray-200'}`}>
+    <footer id="contact" className={`py-20 ${darkMode ? 'bg-zinc-900' : 'bg-gray-200'}`}>
       <section className="container mx-auto flex justify-center">
         <div className="flex space-x-4">
           {socialLinks.map((social, index) => (

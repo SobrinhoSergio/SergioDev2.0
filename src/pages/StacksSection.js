@@ -29,7 +29,7 @@ const StacksSection = ({ darkMode }) => {
   ];
 
   return (
-    <main className={`py-20 ${darkMode ? 'bg-zinc-900' : 'bg-gray-200'}`}>
+    <main id="portfolio" className={`py-20 ${darkMode ? 'bg-zinc-900' : 'bg-gray-200'}`}>
       <h1 className="text-2xl font-bold text-center mb-20">Minhas Habilidades</h1>
       <article className={`container mx-auto px-6 py-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4`}>
         {skillsData.map((skill, index) => (

@@ -19,7 +19,7 @@ const Main = ({ darkMode }) => {
   }, [content.length]);
 
   return (
-    <main className={`py-44 ${darkMode ? 'bg-zinc-900' : 'bg-gray-200'}`}>
+    <main id="home" className={`py-44 ${darkMode ? 'bg-zinc-900' : 'bg-gray-200'}`}>
       
       <section className="container mx-auto px-6 flex justify-between items-center">
         

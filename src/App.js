@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Menu from './components/Menu';
-import Home from './components/Home';
-import Tecnologias from './components/Tecnologias';
-import Footer from './components/Footer';
-import Musica from './components/Musica';
-import Experience from './components/Experience';
-import Stack from './components/StacksSection';
-import GitHubProjects from './components/GitHubProjects';
+import Menu from './pages/Menu';
+import Home from './pages/Home';
+import Tecnologias from './pages/Tecnologias';
+import Footer from './pages/Footer';
+import Musica from './pages/Musica';
+import Experience from './pages/Experience';
+import Stack from './pages/StacksSection';
+import GitHubProjects from './pages/GitHubProjects';
 
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
     <div className={`min-h-screen ${darkMode ? 'text-white' : 'text-gray-800'}`}>
       <Menu darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Home darkMode={darkMode} />
-      {/*<Musica darkMode={darkMode} />*/}
+      <Musica darkMode={darkMode} />
       <Experience darkMode={darkMode} />
       <Stack darkMode={darkMode} />
       <Tecnologias darkMode={darkMode} />

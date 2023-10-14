@@ -71,7 +71,7 @@ const experiences = [
 
 const Experience = ({ darkMode }) => {
   return (
-    <main className={`py-20 ${darkMode ? 'bg-zinc-800' : 'bg-gray-100'}`}>
+    <main id="about" className={`py-20 ${darkMode ? 'bg-zinc-800' : 'bg-gray-100'}`}>
       <section className="container mx-auto px-6 py-4">
         <h1 className="text-2xl font-bold text-center mb-20">Experiências Developer Software</h1>
         <Accordion experiences={experiences} darkMode={darkMode} />
