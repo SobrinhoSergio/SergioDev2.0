@@ -1,4 +1,6 @@
 import React from 'react';
+import { Title, Container } from '../components';
+
 
 const technologies = [
   {
@@ -71,8 +73,8 @@ const technologies = [
 const Tecnologias = ({ darkMode }) => {
   return (
     <main className={`py-20 ${darkMode ? 'bg-zinc-800' : 'bg-gray-100'}`}>
-      <section className="container mx-auto px-6 py-4">
-        <h1 className="text-2xl font-bold text-center mb-20">Tecnologias</h1>
+      <Container>
+        <Title text="Tecnologias"/>
         <div className="grid grid-cols-4 gap-10">
           {technologies.map((tech, index) => (
             <div className="flex justify-center items-center" key={index}>
@@ -80,7 +82,7 @@ const Tecnologias = ({ darkMode }) => {
             </div>
           ))}
         </div>
-      </section>
+      </Container>
     </main>
   );
 };

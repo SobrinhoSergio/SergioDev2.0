@@ -1,6 +1,8 @@
 // StacksSection.js
 import React, { useState } from 'react';
 import SkillSection from './SkillSection';
+import { Title, Container } from '../components';
+
 
 const StacksSection = ({ darkMode }) => {
   const [likedProjects, setLikedProjects] = useState([]);
@@ -30,19 +32,21 @@ const StacksSection = ({ darkMode }) => {
 
   return (
     <main id="portfolio" className={`py-20 ${darkMode ? 'bg-zinc-900' : 'bg-gray-200'}`}>
-      <h1 className="text-2xl font-bold text-center mb-20">Minhas Habilidades</h1>
-      <article className={`container mx-auto px-6 py-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4`}>
-        {skillsData.map((skill, index) => (
-          <SkillSection
-            key={index}
-            title={skill.title}
-            description={skill.description}
-            likedProjects={likedProjects}
-            toggleLike={toggleLike}
-            darkMode={darkMode}
-          />
-        ))}
-      </article>
+      <Container>
+        <Title text="Minhas Habilidades" />
+        <article className={`container mx-auto px-6 py-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4`}>
+          {skillsData.map((skill, index) => (
+            <SkillSection
+              key={index}
+              title={skill.title}
+              description={skill.description}
+              likedProjects={likedProjects}
+              toggleLike={toggleLike}
+              darkMode={darkMode}
+            />
+          ))}
+        </article>
+      </Container>
     </main>
   );
 };

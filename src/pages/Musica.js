@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Title, Container } from '../components';
+
 import myImage from '../images/eu.jpg';
 
 const PodcastPlayer = ({ darkMode }) => {
@@ -12,8 +14,8 @@ const PodcastPlayer = ({ darkMode }) => {
 
   return (
     <main className={`py-20  ${darkMode ? 'bg-zinc-800' : 'bg-gray-100'}`} >
-      <section className={`container mx-auto w-3/6`}>
-        <h1 className="text-2xl font-bold text-center mb-20">Minha Música</h1>
+      <Container>
+        <Title text="Minha Música"/>
         <div className={`${darkMode ? 'bg-zinc-900' : 'bg-gray-200'} border-slate-500 border-b rounded-t-xl p-4 pb-6 sm:p-10 sm:pb-8 lg:p-6 xl:p-10 xl:pb-8 space-y-6 sm:space-y-8 lg:space-y-6 xl:space-y-8`}>
           <div className="flex items-center space-x-4">
             <img src={myImage} alt="" width="88" height="88" className="flex-none rounded-lg bg-slate-100" loading="lazy" />
@@ -105,7 +107,7 @@ const PodcastPlayer = ({ darkMode }) => {
             </button>
           </div>
         </div>
-        </section>
+        </Container>
     </main>
   );
 };

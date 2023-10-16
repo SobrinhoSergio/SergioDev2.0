@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Menu from './pages/Menu';
+import Header from './pages/Header';
 import Home from './pages/Home';
 import Tecnologias from './pages/Tecnologias';
 import Footer from './pages/Footer';
@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <div className={`min-h-screen ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-      <Menu darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Home darkMode={darkMode} />
       <Musica darkMode={darkMode} />
       <Experience darkMode={darkMode} />
