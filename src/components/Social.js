@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'; 
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'; // Importe o ícone do GitHub
 
 const socialLinks = [
   {
@@ -22,24 +22,29 @@ const socialLinks = [
     color: 'blue-800',
     link: 'link_do_linkedin',
   },
+  {
+    icon: FaGithub, // Ícone do GitHub
+    color: 'gray-800', // Cor do GitHub (pode ser ajustada)
+    link: 'link_do_github', // Substitua 'link_do_github' pelo link real do GitHub
+  },
 ];
 
 const Social = ({ darkMode }) => {
   return (
     <div className="flex space-x-4 py-10">
-        {socialLinks.map((social, index) => (
+      {socialLinks.map((social, index) => (
         <a
-            key={index}
-            href={social.link}
-            target="_blank"
-            rel="noopener noreferrer"
+          key={index}
+          href={social.link}
+          target="_blank"
+          rel="noopener noreferrer"
         >
-            {React.createElement(social.icon, {
+          {React.createElement(social.icon, {
             className: `text-gray-600 hover:text-${social.color}`,
             size: 30,
-            })}
+          })}
         </a>
-        ))}
+      ))}
     </div>
   );
 };

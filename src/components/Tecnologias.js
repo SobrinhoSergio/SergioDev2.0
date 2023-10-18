@@ -70,15 +70,14 @@ const technologies = [
 
 const Tecnologias = () => {
   return (
-    <div className="grid grid-cols-4 gap-10">
-        {technologies.map((tech, index) => (
+    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 lg:gap-8">
+      {technologies.map((tech, index) => (
         <div className="flex justify-center items-center" key={index}>
-            <img src={tech.image} alt={tech.alt} />
+          <img src={tech.image} alt={tech.alt} />
         </div>
-        ))}
+      ))}
     </div>
   );
 };
-
 
 export default Tecnologias;
