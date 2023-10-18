@@ -1,6 +1,4 @@
 import React from 'react';
-import { Title, Container } from '../components';
-
 
 const technologies = [
   {
@@ -70,20 +68,15 @@ const technologies = [
   },
 ];
 
-const Tecnologias = ({ darkMode }) => {
+const Tecnologias = () => {
   return (
-    <main className={`py-20 ${darkMode ? 'bg-zinc-800' : 'bg-gray-100'}`}>
-      <Container>
-        <Title text="Tecnologias"/>
-        <div className="grid grid-cols-4 gap-10">
-          {technologies.map((tech, index) => (
-            <div className="flex justify-center items-center" key={index}>
-              <img src={tech.image} alt={tech.alt} />
-            </div>
-          ))}
+    <div className="grid grid-cols-4 gap-10">
+        {technologies.map((tech, index) => (
+        <div className="flex justify-center items-center" key={index}>
+            <img src={tech.image} alt={tech.alt} />
         </div>
-      </Container>
-    </main>
+        ))}
+    </div>
   );
 };
 

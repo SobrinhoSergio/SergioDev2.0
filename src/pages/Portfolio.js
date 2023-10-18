@@ -1,10 +1,10 @@
 // StacksSection.js
 import React, { useState } from 'react';
-import SkillSection from './SkillSection';
+import Skill from '../components/Skill';
 import { Title, Container } from '../components';
 
 
-const StacksSection = ({ darkMode }) => {
+const Portfolio = ({ darkMode }) => {
   const [likedProjects, setLikedProjects] = useState([]);
 
   const toggleLike = (projectId) => {
@@ -36,7 +36,7 @@ const StacksSection = ({ darkMode }) => {
         <Title text="Minhas Habilidades" />
         <article className={`container mx-auto px-6 py-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4`}>
           {skillsData.map((skill, index) => (
-            <SkillSection
+            <Skill
               key={index}
               title={skill.title}
               description={skill.description}
@@ -51,4 +51,4 @@ const StacksSection = ({ darkMode }) => {
   );
 };
 
-export default StacksSection;
+export default Portfolio;

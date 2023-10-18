@@ -26,7 +26,7 @@ const socialLinks = [
 
 const Social = ({ darkMode }) => {
   return (
-    <div className="flex space-x-4">
+    <div className="flex space-x-4 py-10">
         {socialLinks.map((social, index) => (
         <a
             key={index}
