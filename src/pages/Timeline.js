@@ -3,7 +3,7 @@ import React from 'react';
 const Timeline = ({darkMode}) => {
   return (
     <main className="bg-indigo-700 p-4">
-      <h2 className="text-3xl text-white font-bold mb-12">Cronologia</h2>
+      <h2 className="text-3xl text-white font-bold mb-12">Cronologia 🌱</h2>
       <div className="flex flex-col grid-cols-9 p-2 mx-auto md:grid">
         {/* Event 1 */}
         <div className="flex md:contents flex-row-reverse">
