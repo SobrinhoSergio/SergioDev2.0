@@ -19,10 +19,10 @@ const PodcastPlayer = ({darkMode}) => {
           <p className="text-cyan-500 dark:text-cyan-400 text-sm leading-6">
             <abbr title="Episode">Ep.</abbr> 128
           </p>
-          <h2 className="text-slate-500 dark:text-slate-400 text-sm leading-6 truncate">
+          <h2 className="text-slate-500 text-sm leading-6 truncate">
             Eu sei que estás comigo
           </h2>
-          <p className="text-slate-900 dark:text-slate-50 text-lg">
+          <p className="text-slate-500 text-lg">
             Full Stack Radio
           </p>
         </div>
@@ -37,8 +37,8 @@ const PodcastPlayer = ({darkMode}) => {
           </div>
         </div>
         <div className="flex justify-between text-sm leading-6 font-medium tabular-nums">
-          <div className="text-cyan-500 dark:text-slate-100">2:16</div>
-          <div className="text-slate-500 dark:text-slate-400">7:50</div>
+          <div className="text-slate-500 ">2:16</div>
+          <div className="text-slate-500">7:50</div>
         </div>
       </div>
     </div>

@@ -66,6 +66,11 @@ const technologies = [
     image: require('../images/bd.png'),
     alt: 'Banco de Dados',
   },
+  {
+    name: 'Java',
+    image: require('../images/java.png'),
+    alt: 'Java',
+  },
 ];
 
 const Tecnologias = () => {
