@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'; // Importe o ícone do GitHub
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'; 
 
 const socialLinks = [
   {
@@ -31,7 +31,7 @@ const socialLinks = [
 
 const Social = ({ darkMode }) => {
   return (
-    <div className="flex space-x-4 py-10">
+    <div className="flex space-x-8 py-10">
       {socialLinks.map((social, index) => (
         <a
           key={index}

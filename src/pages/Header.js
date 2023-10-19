@@ -11,15 +11,38 @@ const menuItems = [
   { text: 'Contact', link: '#contact' },
 ];
 
-const MenuItem = ({ item, onClick }) => (
-  <li className="hover:bg-blue-500 hover:text-white px-4 py-2 rounded">
-    <a href={item.link} onClick={(e) => onClick(e, item.link)}>
+const MenuItem = ({ item, onClick, selected, index }) => (
+  <li
+    className={`hover:bg-blue-500 hover:text-white px-4 py-2 rounded ${selected ? 'bg-blue-500 text-white' : ''}`}
+  >
+    <a href={item.link} onClick={(e) => onClick(e, item.link, index)}>
       {item.text}
     </a>
   </li>
 );
 
-const MobileMenu = ({ menuItems, onClick, darkMode, toggleDarkMode, isMenuOpen, toggleMenu, closeMenu }) => (
+const scrollToElement = (element, duration) => {
+  const target = document.querySelector(element);
+  const startPosition = window.pageYOffset;
+  const targetPosition = target.offsetTop;
+  const distance = targetPosition - startPosition;
+  const startTime = performance.now();
+  const ease = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+  const animateScroll = currentTime => {
+    const elapsedTime = currentTime - startTime;
+    const progress = Math.min(elapsedTime / duration, 1);
+    window.scrollTo(0, startPosition + distance * ease(progress));
+
+    if (progress < 1) {
+      requestAnimationFrame(animateScroll);
+    }
+  };
+
+  requestAnimationFrame(animateScroll);
+};
+
+const MobileMenu = ({ menuItems, onClick, darkMode, toggleDarkMode, isMenuOpen, toggleMenu, closeMenu, selectedMenuItem, setSelectedMenuItem }) => (
   <div
     className={`fixed top-0 right-0 left-0 h-full z-20 md:hidden ${darkMode ? 'bg-zinc-900' : 'bg-gray-200'}`}
     style={{ height: '100vh' }}
@@ -28,7 +51,13 @@ const MobileMenu = ({ menuItems, onClick, darkMode, toggleDarkMode, isMenuOpen, 
       <div>
         <ul className="flex flex-col items-center space-y-4 mt-16">
           {menuItems.map((item, index) => (
-            <MenuItem key={index} item={item} onClick={onClick} />
+            <MenuItem
+              key={index}
+              item={item}
+              onClick={onClick}
+              selected={selectedMenuItem === index}
+              index={index}
+            />
           ))}
           <li>
             <DarkModeButton darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
@@ -44,14 +73,13 @@ const MobileMenu = ({ menuItems, onClick, darkMode, toggleDarkMode, isMenuOpen, 
 
 const Header = ({ darkMode, toggleDarkMode }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [selectedMenuItem, setSelectedMenuItem] = useState(null);
 
-  const handleSmoothScroll = (event, targetId) => {
+  const handleSmoothScroll = (event, targetId, index) => {
     event.preventDefault();
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-      closeMenu();
-    }
+    scrollToElement(targetId, 1000);
+    closeMenu();
+    setSelectedMenuItem(index);
   };
 
   const openMenu = () => {
@@ -63,18 +91,20 @@ const Header = ({ darkMode, toggleDarkMode }) => {
   };
 
   return (
-    <header
-      className={`sticky top-0 z-10 ${
-        darkMode ? 'bg-zinc-800' : 'bg-gray-100'
-      }`}
-    >
+    <header className={`sticky top-0 z-10 ${darkMode ? 'bg-zinc-800' : 'bg-gray-100'}`}>
       <Container>
         <div className="flex justify-between items-center">
           <Logo />
           <nav className="hidden md:flex">
             <ul className="flex items-center space-x-5">
               {menuItems.map((item, index) => (
-                <MenuItem key={index} item={item} onClick={handleSmoothScroll} />
+                <MenuItem
+                  key={index}
+                  item={item}
+                  onClick={handleSmoothScroll}
+                  selected={selectedMenuItem === index}
+                  index={index}
+                />
               ))}
               <li>
                 <DarkModeButton darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
@@ -93,7 +123,9 @@ const Header = ({ darkMode, toggleDarkMode }) => {
             toggleDarkMode={toggleDarkMode}
             isMenuOpen={isMenuOpen}
             toggleMenu={closeMenu}
-            closeMenu={closeMenu} // Passando a função closeMenu para o MobileMenu
+            closeMenu={closeMenu}
+            selectedMenuItem={selectedMenuItem}
+            setSelectedMenuItem={setSelectedMenuItem}
           />
         )}
       </Container>

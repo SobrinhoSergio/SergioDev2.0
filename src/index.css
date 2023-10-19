@@ -3,11 +3,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* CSS para rolagem suave */
-html {
-    scroll-behavior: smooth;
-  }
-  
 
 /* Estilo da barra de rolagem horizontal */
 ::-webkit-scrollbar {
@@ -26,4 +21,18 @@ html {
   ::-webkit-scrollbar-track {
     background: #f1f1f1;
   }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); /* Ajuste o valor conforme necessário para controlar a altura da flutuação */
+    }
+  }
+  
+  .animate-float {
+    animation: float 2s ease-in-out infinite;
+  }
+  
   
