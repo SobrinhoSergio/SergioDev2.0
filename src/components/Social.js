@@ -5,7 +5,7 @@ const socialLinks = [
   {
     icon: FaFacebook,
     color: 'blue-500',
-    link: 'link_do_facebook',
+    link: 'https://www.facebook.com/sergio.sobrinho.9638',
   },
   {
     icon: FaTwitter,
@@ -15,17 +15,17 @@ const socialLinks = [
   {
     icon: FaInstagram,
     color: 'pink-500',
-    link: 'link_do_instagram',
+    link: 'https://www.instagram.com/sergio.sob7/',
   },
   {
     icon: FaLinkedin,
     color: 'blue-800',
-    link: 'link_do_linkedin',
+    link: 'https://www.linkedin.com/in/sobrinhosergio/',
   },
   {
-    icon: FaGithub, // Ícone do GitHub
-    color: 'gray-800', // Cor do GitHub (pode ser ajustada)
-    link: 'link_do_github', // Substitua 'link_do_github' pelo link real do GitHub
+    icon: FaGithub,
+    color: 'gray-800',
+    link: 'https://github.com/SobrinhoSergio', 
   },
 ];
 
