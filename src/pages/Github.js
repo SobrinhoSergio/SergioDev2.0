@@ -1,6 +1,8 @@
 import React from 'react';
 import Accordion from '../components/Accordion';
 import { Title, Container } from '../components';
+import myImage from '../images/gif.gif';
+
 
 
 const About = () => {
@@ -16,6 +18,8 @@ const About = () => {
                 Projetos
                 </a>
             </button>
+
+            <img src={myImage} alt="GIF de exemplo" className="mt-4" />
         </div>
       </Container>
     </main>

@@ -4,7 +4,7 @@ import myImage from '../images/eu.jpg';
 const PodcastPlayer = ({darkMode}) => {
 
   const [isPlaying, setIsPlaying] = useState(true);
-    const audioFile = '../music/minhaAncora.mpeg';
+    const audioFile = '../music/minhaAncora.mp3';
 
     const togglePlayPause = () => {
       setIsPlaying(!isPlaying);
